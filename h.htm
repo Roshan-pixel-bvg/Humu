@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pookie's Special Page</title>
+    <style>
+        body {
+            font-family: 'Arial, sans-serif';
+            background-color: lightpink;
+            text-align: center;
+            padding: 50px;
+            overflow: hidden;
+        }
+
+        /* Emoji animation setup */
+        .kiss-emoji {
+            position: absolute;
+            font-size: 24px;
+            animation: floatUp 6s infinite ease-in-out;
+        }
+
+        /* Emoji animation keyframes */
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+        }
+
+        /* Random emoji placement */
+        .kiss-emoji:nth-child(1) { left: 5%; animation-delay: 0s; }
+        .kiss-emoji:nth-child(2) { left: 20%; animation-delay: 2s; }
+        .kiss-emoji:nth-child(3) { left: 35%; animation-delay: 1s; }
+        .kiss-emoji:nth-child(4) { left: 50%; animation-delay: 3s; }
+        .kiss-emoji:nth-child(5) { left: 65%; animation-delay: 0.5s; }
+        .kiss-emoji:nth-child(6) { left: 80%; animation-delay: 1.5s; }
+        .kiss-emoji:nth-child(7) { left: 95%; animation-delay: 2.5s; }
+
+        .message-box {
+            display: none;
+            margin-top: 50px;
+            border: 3px solid darkpink;
+            background-color: darkpink;
+            color: white;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter the Secret Password to see my small gift😇</h1>
+    <input type="password" id="password" placeholder="Type password..." />
+    <button onclick="checkPassword()">Unlock</button>
+    <p id="error-message" class="error"></p>
+
+    <div id="message-box" class="message-box">
+        <h2>I love u Humu❤️. mai tumhari jitni tarif kru utni kaam h tum mujhe kaise mil gayi idk bas mujhe pata h sayad mai tumhare liye best nhi hu🥲 but i will try my best to be ur best itz my promise😊.tumhe time nhi de pata hu kyuki tumhare sath life mai aage time bitna h bas isliye thoda busy raheta hu u can't gusse ki maine kya kya socha abt future 😅 at last I LOVE U AGAIN😘 </h2>
+    </div>
+
+    <!-- Floating Kiss Emojis -->
+    <div id="emoji-container">
+        <div class="kiss-emoji">😘</div>
+        <div class="kiss-emoji">😘</div>
+        <div class="kiss-emoji">😘</div>
+        <div class="kiss-emoji">😘</div>
+        <div class="kiss-emoji">😘</div>
+        <div class="kiss-emoji">😘</div>
+        <div class="kiss-emoji">😘</div>
+    </div>
+
+    <script>
+        const correctPassword = "Humu";
+
+        function checkPassword() {
+            const inputPassword = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+            const messageBox = document.getElementById("message-box");
+
+            if (inputPassword === correctPassword) {
+                errorMessage.textContent = "";
+                messageBox.style.display = "block";
+            } else {
+                errorMessage.textContent = "Write correct password, babe!";
+                messageBox.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
